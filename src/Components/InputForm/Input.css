@@ -1,0 +1,47 @@
+.input_container {
+  width: 550px;
+  height: 65px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  align-items: center;
+}
+
+.input_container .icon {
+  width: 55px;
+  height: 100%;
+  background-color: #fff;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+
+.input_container .icon span {
+  font-size: 4rem;
+  color: #e6e6e6;
+}
+
+.input_container .input_box {
+  /* border: 1px solid green; */
+  width: calc(100% - 55px);
+  height: 100%;
+}
+
+.input_container .input_box input {
+  /* border: 1px solid green; */
+  border: none;
+  width: 100%;
+  outline: none;
+  height: 100%;
+  font-size: 28px;
+  font-weight: 100;
+  color: #4d4d4d;
+}
+
+::placeholder {
+  color: red;
+  font-weight: 100;
+  color: #e6e6e6;
+  font-size: 28px;
+  font-style: italic;
+}
