@@ -21,7 +21,16 @@ const InputData = (props) => {
     <div className="header">
       <div className="input_container">
         <div className="icon">
-          <span className="material-symbols-outlined"> expand_more </span>
+          <span
+            className="material-symbols-outlined"
+            style={
+              props.totalList > 0
+                ? { visibility: 'visible' }
+                : { visibility: 'hidden' }
+            }
+          >
+            expand_more{' '}
+          </span>
         </div>
         <form className="input_box" onSubmit={formSubmitHandler}>
           <input

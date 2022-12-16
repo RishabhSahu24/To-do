@@ -1,18 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const ListItemElement = (props) => {
   const deleteHandler = () => {
     props.onDelete(props.id);
   };
 
-  const statusChangeHandler = (event) => {};
-
   return (
     <li>
       <div className="list_element">
         <input
           type="checkbox"
-          onClick={statusChangeHandler}
           className="checkbox checkbox_field"
           defaultChecked={props.isCompleted ? true : false}
         />

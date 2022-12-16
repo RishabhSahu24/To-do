@@ -6,6 +6,7 @@ import ListItem from './Components/ListItem/Listitem';
 import Footer from './Components/Footer/Footer';
 
 function App() {
+  
   const [todo, setTodo] = useState([
     { input: 'Do all exercises!', isCompleted: true, id: 'g1' },
     { input: 'Finish the course!', isCompleted: false, id: 'g2' },
@@ -37,6 +38,7 @@ function App() {
       });
       return updatedTodo;
     });
+    setFilterValue('all');
   };
 
   const deleteItemHandler = (todoId) => {
@@ -46,24 +48,46 @@ function App() {
     });
   };
 
+  const clearCompletedHandlerFunction = () => {
+    setTodo((prevTodo) => {
+      const updatedTodo = prevTodo.filter(
+        (todos) => todos.isCompleted === false
+      );
+      return updatedTodo;
+    });
+  };
+
   const countNumberOfActiveTodo = () => {
-    let count = 0;
+    let activeCount = 0;
     todo.map((elem) => {
       if (elem.isCompleted === false) {
-        count = count + 1;
+        activeCount = activeCount + 1;
       }
     });
-    return count;
+    return activeCount;
+  };
+
+  const countNumberOfCompletedTodo = () => {
+    let completedCount = false;
+    todo.map((elem) => {
+      if (elem.isCompleted === true) {
+        completedCount = true;
+      }
+    });
+    return completedCount;
   };
 
   return (
     <div>
       <Heading></Heading>
-      <InputData onAddTodo={addTodoHandler}></InputData>
+      <InputData onAddTodo={addTodoHandler} totalList={todo.length}></InputData>
       <ListItem items={filterTodo} onDeleteItem={deleteItemHandler}></ListItem>
       <Footer
-        count={countNumberOfActiveTodo(todo)}
+        activeCount={countNumberOfActiveTodo(todo)}
+        completedCount={countNumberOfCompletedTodo(todo)}
         filterValueHandler={filterHandler}
+        clearCompletedHandler={clearCompletedHandlerFunction}
+        totalList={todo.length}
       ></Footer>
     </div>
   );
