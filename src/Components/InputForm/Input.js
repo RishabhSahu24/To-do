@@ -17,6 +17,10 @@ const InputData = (props) => {
     props.onAddTodo(enteredValue);
   };
 
+  const clickHandler = () => {
+    props.updateStatus();
+  };
+
   return (
     <div className="header">
       <div className="input_container">
@@ -28,6 +32,7 @@ const InputData = (props) => {
                 ? { visibility: 'visible' }
                 : { visibility: 'hidden' }
             }
+            onClick={clickHandler}
           >
             expand_more{' '}
           </span>

@@ -13,7 +13,7 @@ const ListItem = (props) => {
             id={elem.id}
             isCompleted={elem.isCompleted}
             onDelete={props.onDeleteItem}
-            statusChangeHandler={props.items}
+            statusChangeHandler={props.onClickCheckboxHandler}
           >
             {elem.input}
           </ListItemElement>

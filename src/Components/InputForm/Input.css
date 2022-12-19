@@ -19,6 +19,12 @@
 .input_container .icon span {
   font-size: 4rem;
   color: #e6e6e6;
+  cursor: pointer;
+}
+
+.input_container .icon span:hover,
+.input_container .icon span:active {
+  color: #4d4d4d;
 }
 
 .input_container .input_box {

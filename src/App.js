@@ -6,10 +6,8 @@ import ListItem from './Components/ListItem/Listitem';
 import Footer from './Components/Footer/Footer';
 
 function App() {
-  
   const [todo, setTodo] = useState([
     { input: 'Do all exercises!', isCompleted: true, id: 'g1' },
-    { input: 'Finish the course!', isCompleted: false, id: 'g2' },
   ]);
 
   let [filterValue, setFilterValue] = useState('all');
@@ -77,11 +75,42 @@ function App() {
     return completedCount;
   };
 
+  const toggleStatus = (id) => {
+    let newTodo = todo.map((task) => {
+      if (task.id === id) {
+        return { ...task, isCompleted: !task.isCompleted };
+      }
+      return task;
+    });
+    setTodo(newTodo);
+  };
+
+  const updateStatusHandler = () => {
+    let newTodo = todo.map((task) => {
+      console.log(task.isCompleted);
+      if (task.isCompleted === false) {
+        task.isCompleted = true;
+      }
+      return task;
+    });
+    setTodo(newTodo);
+  };
+
+  console.log(todo);
+
   return (
     <div>
       <Heading></Heading>
-      <InputData onAddTodo={addTodoHandler} totalList={todo.length}></InputData>
-      <ListItem items={filterTodo} onDeleteItem={deleteItemHandler}></ListItem>
+      <InputData
+        onAddTodo={addTodoHandler}
+        totalList={todo.length}
+        updateStatus={updateStatusHandler}
+      ></InputData>
+      <ListItem
+        items={filterTodo}
+        onDeleteItem={deleteItemHandler}
+        onClickCheckboxHandler={toggleStatus}
+      ></ListItem>
       <Footer
         activeCount={countNumberOfActiveTodo(todo)}
         completedCount={countNumberOfCompletedTodo(todo)}

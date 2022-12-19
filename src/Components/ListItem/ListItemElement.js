@@ -5,13 +5,18 @@ const ListItemElement = (props) => {
     props.onDelete(props.id);
   };
 
+  const checkboxClickHandler = (InputData) => {
+    props.statusChangeHandler(props.id);
+  };
+
   return (
     <li>
       <div className="list_element">
         <input
           type="checkbox"
           className="checkbox checkbox_field"
-          defaultChecked={props.isCompleted ? true : false}
+          checked={props.isCompleted ? true : false}
+          onClick={checkboxClickHandler}
         />
         <label
           htmlFor=""
@@ -23,6 +28,7 @@ const ListItemElement = (props) => {
         >
           {props.children}
         </label>
+
         <button onClick={deleteHandler} className="destory">
           <span className="material-symbols-outlined">close</span>
         </button>
