@@ -21,39 +21,89 @@ section .ul li {
   /* border: 1px solid red; */
 }
 
-.list_element .checkbox {
-  width: 20px;
-  height: 100%;
-  margin: 0 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.input_field {
 }
 
-.list_element label {
+.list_element .checkbox {
+  width: 55px;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  /* opacity: 0; */
+}
+
+.checkbox .checkbox_field {
+  width: 25px;
+  border-radius: 50%;
+  height: 30px;
+}
+
+/* label::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  background-color: #e6d2d6;
+}
+
+label::after {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 4px;
+  width: 5px;
+  height: 12px;
+  border: 0 6px 6px 0;
+  background-color: green;
+  transition: 0.2s ease;
+} */
+
+/* .checkbox_field:not(:checked) + .list_content label {
+  transform: scale(0);
+  opacity: 0;
+  background-color: red;
+}
+
+.checkbox_field:checked + .list_content label::after {
+  transform: rotate(35deg) scale(1);
+  opacity: 1;
+} */
+
+.list_element .list_content {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.list_content label {
   font-size: 24px;
+
   font-weight: 100;
   color: #4d4d4d;
+
   line-height: 1.2;
   transition: color 0.4s;
 }
 
-.list_element button {
+.list_element .list_content button {
+  margin-right: 1rem;
   background: none;
   height: 100%;
   border: none;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.list_element button span {
+.list_element .list_content button span {
   font-size: 30px;
   color: #cc9a9a;
   text-transform: lowercase;
-}
-
-.invalid {
-  border-color: red;
 }

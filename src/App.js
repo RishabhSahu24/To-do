@@ -6,9 +6,7 @@ import ListItem from './Components/ListItem/Listitem';
 import Footer from './Components/Footer/Footer';
 
 function App() {
-  const [todo, setTodo] = useState([
-    { input: 'Do all exercises!', isCompleted: true, id: 'g1' },
-  ]);
+  const [todo, setTodo] = useState([]);
 
   let [filterValue, setFilterValue] = useState('all');
 
@@ -95,8 +93,6 @@ function App() {
     });
     setTodo(newTodo);
   };
-
-  console.log(todo);
 
   return (
     <div>

@@ -12,26 +12,29 @@ const ListItemElement = (props) => {
   return (
     <li>
       <div className="list_element">
-        <input
-          type="checkbox"
-          className="checkbox checkbox_field"
-          checked={props.isCompleted ? true : false}
-          onClick={checkboxClickHandler}
-        />
-        <label
-          htmlFor=""
-          style={
-            props.isCompleted
-              ? { textDecoration: 'line-through', color: '#d9d9d9' }
-              : {}
-          }
-        >
-          {props.children}
-        </label>
-
-        <button onClick={deleteHandler} className="destory">
-          <span className="material-symbols-outlined">close</span>
-        </button>
+        <div className="checkbox">
+          <input
+            type="checkbox"
+            className="checkbox_field"
+            checked={props.isCompleted ? true : false}
+            onClick={checkboxClickHandler}
+          />
+        </div>
+        <div className="list_content">
+          <label
+            htmlFor=""
+            style={
+              props.isCompleted
+                ? { textDecoration: 'line-through', color: '#d9d9d9' }
+                : {}
+            }
+          >
+            {props.children}
+          </label>
+          <button onClick={deleteHandler} className="destory">
+            <span className="material-symbols-outlined">close</span>
+          </button>
+        </div>
       </div>
     </li>
   );

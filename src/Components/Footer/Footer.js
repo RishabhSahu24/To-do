@@ -26,7 +26,7 @@ const Footer = (props) => {
           : { visibility: 'hidden' }
       }
     >
-      <div className="footer_content">
+      <div className="footer_content wrapper">
         <div className="todo_count">{props.activeCount} item left</div>
         <ul className="filter">
           <li>
