@@ -84,13 +84,20 @@ function App() {
   };
 
   const updateStatusHandler = () => {
+    let flag = true;
     let newTodo = todo.map((task) => {
-      console.log(task.isCompleted);
       if (task.isCompleted === false) {
+        flag = false;
         task.isCompleted = true;
       }
       return task;
     });
+    if (flag) {
+      newTodo = todo.map((task) => {
+        task.isCompleted = false;
+        return task;
+      });
+    }
     setTodo(newTodo);
   };
 
