@@ -15,6 +15,7 @@ const InputData = (props) => {
       return;
     }
     props.onAddTodo(enteredValue);
+    setEnteredValue('');
   };
 
   const clickHandler = () => {
@@ -43,6 +44,7 @@ const InputData = (props) => {
             id="text"
             className="main_input"
             placeholder="What needs to be done?"
+            value={enteredValue}
             onChange={todoInputChangeHandler}
           />
         </form>
