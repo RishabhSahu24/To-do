@@ -129,6 +129,7 @@ function App() {
         filterValueHandler={filterHandler}
         clearCompletedHandler={clearCompletedHandlerFunction}
         totalList={todo.length}
+        activeValue={filterValue}
       ></Footer>
     </div>
   );

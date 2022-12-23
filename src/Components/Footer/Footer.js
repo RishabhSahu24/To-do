@@ -30,17 +30,42 @@ const Footer = (props) => {
         <div className="todo_count">{props.activeCount} item left</div>
         <ul className="filter">
           <li>
-            <button className="all selected" onClick={allFilterHandler}>
+            <button
+              className="all"
+              // borderColor: 'rgba(175, 47, 47, 0.2)'
+              style={
+                props.activeValue == 'all'
+                  ? { borderColor: 'rgba(175, 47, 47, 0.2)' }
+                  : {}
+              }
+              onClick={allFilterHandler}
+            >
               All
             </button>
           </li>
           <li>
-            <button className="active" onClick={activeFilterHandler}>
+            <button
+              className="active"
+              style={
+                props.activeValue == 'active'
+                  ? { borderColor: 'rgba(175, 47, 47, 0.2)' }
+                  : {}
+              }
+              onClick={activeFilterHandler}
+            >
               Active
             </button>
           </li>
           <li>
-            <button className="completed" onClick={completedFilterHandler}>
+            <button
+              className="completed"
+              style={
+                props.activeValue == 'completed'
+                  ? { borderColor: 'rgba(175, 47, 47, 0.2)' }
+                  : {}
+              }
+              onClick={completedFilterHandler}
+            >
               Completed
             </button>
           </li>
